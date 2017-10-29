@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import webservices.publicar.DataUsuario;
-import webservices.publicar.DataUsuarioArray;
+import publicar.DataUsuario;
+import publicar.DataUsuarioArray;
 
 /**
  * Servlet implementation class Home
@@ -31,8 +31,8 @@ public class Home extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		webservices.publicar.WebServicesService s = new webservices.publicar.WebServicesService();
-		webservices.publicar.WebServices port = s.getWebServicesPort();
+		publicar.WebServicesService s = new publicar.WebServicesService();
+		publicar.WebServices port = s.getWebServicesPort();
 		DataUsuario du = port.obtenerUsuario("00000001");
 		
 		request.setAttribute("obtener-usuario", du);

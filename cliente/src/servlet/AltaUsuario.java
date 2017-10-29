@@ -31,8 +31,8 @@ public class AltaUsuario extends HttpServlet {
 		String apellido = request.getParameter("apellido");
 		String cedula = request.getParameter("cedula");
 		
-		webservices.publicar.WebServicesService s = new webservices.publicar.WebServicesService();
-		webservices.publicar.WebServices port = s.getWebServicesPort();
+		publicar.WebServicesService s = new publicar.WebServicesService();
+		publicar.WebServices port = s.getWebServicesPort();
 		port.nuevoUsuario(nombre, apellido, cedula);
 		
 		response.sendRedirect("/cliente/home");
